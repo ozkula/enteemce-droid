@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.oz.ntmc" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>NTMC</name>
+    <description>
+        NTMC Android
+    </description>
+    <author email="at.ozkula@gmail.com" href="http://rozaq.in">
+        OzKulaTeam
+    </author>
+    <content src="index.html" />
+
+
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+
+        <preference name="AutoHideSplashScreen" value="false" />
+        <preference name="SplashScreenDelay" value="3000" />
+        <preference name="SplashScreenDelay" value="0"/>
+        <preference name="android-minSdkVersion" value="14" />
+        <allow-intent href="market:*" />
+        <!-- Splash Screen -->
+        <splash src="www/img/LOGONTMC.png" />
+        <!--  -->
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <preference name="BackupWebStorage" value="none" />
+    </platform>
+    <preference name="DisallowOverscroll" value="false" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
+    <plugin name="cordova-plugin-console" spec="~1.0.1" />
+    <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
+</widget>
