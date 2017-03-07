@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <link rel="stylesheet" href="assets/material.min.css">
+        <link rel="stylesheet" href="css/framework7-icons.css">
+        <link rel="stylesheet" href="css/custom.css">
+
+        <title>NTMC</title>
+    </head>
+    <body style="background-color: #1e034e; ">
+      
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        
+          <main class="mdl-layout__content">
+              
+              <div class="mdl-card" style="width: 100%;margin-top: 10%">
+                
+                <div class="mdl-card__media" style="background-color: #1e034e;">
+                  <div class="centeritems mdl-grid">
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-cell mdl-cell--4-col"><img src="img/LOGONTMC.png" width="220" height="140" border="0" alt=""></div>
+                    <div class="mdl-layout-spacer"></div>
+                  </div>        
+                </div>
+                <div class="mdl-card__supporting-text">
+
+                  <h5>Hi, Nama Email..</h5>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" id="email" value="Email@email.com">
+                      <label class="mdl-textfield__label" for="email">Email</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="number" id="Telepon">
+                      <label class="mdl-textfield__label" for="Telepon">Telepon</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <textarea class="mdl-textfield__input" type="text" rows= "3" id="alamat" ></textarea>
+                      <label class="mdl-textfield__label" for="alamat">Alamat</label>
+                    </div>
+
+                </div>
+                <div class="mdl-card__actions">
+
+                        <button onclick="location.href = 'main.html';" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" style="width: 100%">
+                          Save
+                        </button>
+
+                </div>
+              </div>
+
+          </main>
+
+        <footer>
+          
+        </footer>
+        </div>
+        <script type="text/javascript" src="assets/material.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

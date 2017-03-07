@@ -7,15 +7,31 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.oz.NTMC"
+        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.oz.ntmc"
+            "PACKAGE_NAME": "com.oz.NTMC"
         },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.oz.ntmc"
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.oz.NTMC"
         },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.oz.ntmc"
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.oz.NTMC"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.oz.NTMC"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.oz.NTMC"
+        },
+        "cordova-plugin-googleplus": {
+            "PACKAGE_NAME": "com.oz.NTMC"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.oz.NTMC"
+        }
+    }
 }

@@ -1,32 +1,107 @@
-<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <link rel="stylesheet" href="assets/material.min.css">
+        <link rel="stylesheet" href="css/framework7-icons.css">
+        <link rel="stylesheet" href="css/custom.css">
 
-<!-- Top Navbar-->
-<div class="navbar">
-    <div class="navbar-inner">
-        <div class="center sliding">Profile</div>
-    </div>
-</div>
-<div class="pages navbar-through toolbar-through">
-    <div data-page="profile" class="page">
-        <div class="page-content">
-            <div class="content-block">
-                <p>This Page a Profile User Share And Information</p>
+        <title>NTMC</title>
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row text-center">
+              <span class="mdl-layout-title">NTMC</span>
             </div>
-        </div>
-        <!-- Bottom Toolbar-->
-                    <div class="toolbar">
-                        <div class="toolbar-inner">
-                            <a href="index.html">
-                                <i class="f7-icons">home_fill</i>
-                            </a>
-                            <a href="capture.html">
-                                <i class="f7-icons">camera_fill</i>
-                            </a>
-                            <a href="profile.html">
-                                <i class="f7-icons">persons</i>
-                            </a>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+              <a href="main.html" class="mdl-layout__tab"><i class="f7-icons">home</i></a>
+              <a href="camera_menu.html" onclick="return getPosition();" class="mdl-layout__tab"><i class="f7-icons">camera_fill</i></a>
+              <a href="profile.html" class="mdl-layout__tab is-active"><i class="f7-icons">persons</i></a>
+            </div>
+        </header>
+
+          <main class="mdl-layout__content">
+            <!-- Square card -->
+        			<div class="demo-card-square mdl-card mdl-shadow--2dp">
+        			  <div class="mdl-card__title mdl-card--expand">
+        			    <h2 class="mdl-card__title-text">Your Name</h2>
+        			  </div>
+        			</div>
+            <!--  -->
+            <div class="mdl-grid" id="dataview">
+
+               <!--  <div class="mdl-cell mdl-cell--2-col-phone">
+                    <div class="demo-card-image mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand"></div>
+                      <div class="mdl-card__actions">
+                        <span class="mdl-chip mdl-chip--contact">
+                            <span class="mdl-chip__contact mdl-color--green mdl-color-text--white">R</span>
+                            <span class="mdl-chip__text">Telah Direspon</span>
+                        </span>
+                      </div>
+                        <div class="mdl-card__menu">
+                            <span class="mdl-color-text--white">Tanggal masuk</span>
                         </div>
-                    </div>          
-                    <!-- /End of Bottom Toolbar-->
-    </div>
-</div>
+                    </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--2-col-phone">
+                    <div class="demo-card-image mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand"></div>
+                        <div class="mdl-card__menu">
+                            <span class="mdl-color-text--white">Tanggal masuk</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mdl-cell mdl-cell--2-col-phone">
+                    <div class="demo-card-event mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h6>
+                          Featured event:<br>
+                          May 24, 2016<br>
+                          7-11pm
+                        </h6>
+                      </div>
+                      <div class="mdl-card__actions mdl-card--border">
+                        <span class="mdl-chip mdl-chip--contact">
+                            <span class="mdl-chip__contact mdl-color--green mdl-color-text--white">R</span>
+                            <span class="mdl-chip__text">Telah Direspon</span>
+                        </span>
+                      </div>
+                    </div>
+                </div>                
+
+                <div class="mdl-cell mdl-cell--2-col-phone">
+                    <div class="demo-card-event mdl-card mdl-shadow--2dp">
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h6>
+                          Featured event:<br>
+                          May 24, 2016<br>
+                          7-11pm
+                        </h6>
+                      </div>
+                    </div>
+                </div> -->
+               
+            </div>
+            <!--  -->
+
+          </main>
+
+        <footer>
+			
+		</footer>
+        </div>
+        <script type="text/javascript" src="assets/material.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+          <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/read_data.js"></script>
+    </body>
+</html>

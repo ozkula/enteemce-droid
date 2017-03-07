@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "79736576527",
+    "project_id": "ntmc-signin"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79736576527:android:4a02818abc639ea8",
+        "android_client_info": {
+          "package_name": "oz.com.NTMC"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79736576527-mrb5le4cls2cumds1s9ffcqhg0gbtk56.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "oz.com.NTMC",
+            "certificate_hash": "adc2ddd47074d7354ba329be195a489b66017454"
+          }
+        },
+        {
+          "client_id": "79736576527-s2hm0s1ljqgprvvt5fo3ghi1b4bsdqbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1eHmKFbQg-Wu4xNVocSKdUbCpZnaqxJ0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
