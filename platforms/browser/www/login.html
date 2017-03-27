@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'self' 'unsafe-inline' 'unsafe-eval'; script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <link rel="stylesheet" href="assets/material.min.css">
+        <link rel="stylesheet" href="css/framework7-icons.css">
+        <link rel="stylesheet" href="css/custom.css">
+
+        <title>NTMC</title>
+    </head>
+    <body style="background-color: #1e034e; ">
+      
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        
+          <main class="mdl-layout__content">
+              <div class="mdl-card" style="width: 100%;margin-top: 10%">
+                <div class="mdl-card__media" style="background-color: #1e034e;">
+                  <div class="centeritems mdl-grid">
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-cell mdl-cell--4-col"><img src="img/LOGONTMC.png" width="200" height="140" border="0" alt=""></div>
+                    <div class="mdl-layout-spacer"></div>
+                  </div>        
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" id="email" value="">
+                      <label class="mdl-textfield__label" for="email">Email</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="password" id="password">
+                      <label class="mdl-textfield__label" for="password">Password</label>
+                    </div>
+                </div>
+                <div class="mdl-card__actions">
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored show-modal" style="width: 100%" id="login">Login</button>
+                </div>
+                <button onclick="location.href = 'register.html';"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" style="width: 100%" id="register">Register</button>
+              </div>
+
+              <dialog class="mdl-dialog">
+                      <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+                  </dialog>
+                  <script>
+                    var dialog = document.querySelector('dialog');
+                    var showModalButton = document.querySelector('.show-modal');
+                    if (! dialog.showModal) {
+                      dialogPolyfill.registerDialog(dialog);
+                    }
+                    showModalButton.addEventListener('click', function() {
+                      dialog.showModal();
+                    });
+                  </script>
+
+          </main>
+
+        <footer>
+          
+        </footer>
+        </div>
+        <script type="text/javascript" src="assets/material.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+    </body>
+</html>

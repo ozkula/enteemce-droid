@@ -17,12 +17,27 @@
 }
 
 /*Profile Layout*/
-.demo-card-square.mdl-card {
+.profile-tab.mdl-card {
   width: 100%;
-  height: 200px;
-
+  height: 10px;
+  background: url('../img/bg_profile.jpg') center / cover;
 }
-.demo-card-square > .mdl-card__title {
+.profile-tab > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.profile-tab__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-name.mdl-card {
+  width: 100%;
+  height: 10px;
+}
+.profile-name > .mdl-card__title {
   color: #fff;
   background:
     url('../img/bg_profile.jpg') bottom right 15% no-repeat #46B6AC;
@@ -52,6 +67,27 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+/*Map Item*/
+.map-item.mdl-card {
+  width: 100%;
+  height: 100%;
+}
+.map-item > .mdl-card__actions {
+  height: 52px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.map-item__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.content-card-item.mdl-card {
+  width: 100%;
+  height: 100%;
+}
+
 /*Content Pin */
 .demo-card-event.mdl-card {
   width: 100%;

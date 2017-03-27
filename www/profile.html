@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'self' 'unsafe-inline' 'unsafe-eval'; script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -19,79 +19,31 @@
               <span class="mdl-layout-title">NTMC</span>
             </div>
             <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-              <a href="main.html" class="mdl-layout__tab"><i class="f7-icons">home</i></a>
-              <a href="camera_menu.html" onclick="return getPosition();" class="mdl-layout__tab"><i class="f7-icons">camera_fill</i></a>
+              <a href="main.html" class="mdl-layout__tab"><i class="f7-icons">social_twitter_fill</i></a>
+              <a href="camera_menu.html" onclick="return getPosition();" class="mdl-layout__tab"><i class="f7-icons">chat_fill</i></a>
               <a href="profile.html" class="mdl-layout__tab is-active"><i class="f7-icons">persons</i></a>
+            </div>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+              <a href="profile.html" class="mdl-layout__tab is-active"><i class="f7-icons">persons</i></a>
+              <a href="globalpost.html" class="mdl-layout__tab"><i class="f7-icons">social_rss_fill</i></a>
             </div>
         </header>
 
-          <main class="mdl-layout__content">
+          <main class="mdl-layout__content contentisi">
             <!-- Square card -->
-        			<div class="demo-card-square mdl-card mdl-shadow--2dp">
-        			  <div class="mdl-card__title mdl-card--expand">
-        			    <h2 class="mdl-card__title-text">Your Name</h2>
-        			  </div>
-        			</div>
+            <div class="profile-tab mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand"></div>
+              <div class="mdl-card__actions">
+                <span class="profile-tab__filename" id="profile_name"></span>
+              </div>
+            </div>
+
+
             <!--  -->
             <div class="mdl-grid" id="dataview">
 
-               <!--  <div class="mdl-cell mdl-cell--2-col-phone">
-                    <div class="demo-card-image mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand"></div>
-                      <div class="mdl-card__actions">
-                        <span class="mdl-chip mdl-chip--contact">
-                            <span class="mdl-chip__contact mdl-color--green mdl-color-text--white">R</span>
-                            <span class="mdl-chip__text">Telah Direspon</span>
-                        </span>
-                      </div>
-                        <div class="mdl-card__menu">
-                            <span class="mdl-color-text--white">Tanggal masuk</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mdl-cell mdl-cell--2-col-phone">
-                    <div class="demo-card-image mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand"></div>
-                        <div class="mdl-card__menu">
-                            <span class="mdl-color-text--white">Tanggal masuk</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mdl-cell mdl-cell--2-col-phone">
-                    <div class="demo-card-event mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand">
-                        <h6>
-                          Featured event:<br>
-                          May 24, 2016<br>
-                          7-11pm
-                        </h6>
-                      </div>
-                      <div class="mdl-card__actions mdl-card--border">
-                        <span class="mdl-chip mdl-chip--contact">
-                            <span class="mdl-chip__contact mdl-color--green mdl-color-text--white">R</span>
-                            <span class="mdl-chip__text">Telah Direspon</span>
-                        </span>
-                      </div>
-                    </div>
-                </div>                
-
-                <div class="mdl-cell mdl-cell--2-col-phone">
-                    <div class="demo-card-event mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title mdl-card--expand">
-                        <h6>
-                          Featured event:<br>
-                          May 24, 2016<br>
-                          7-11pm
-                        </h6>
-                      </div>
-                    </div>
-                </div> -->
-               
             </div>
-            <!--  -->
-
+            
           </main>
 
         <footer>
@@ -101,7 +53,7 @@
         <script type="text/javascript" src="assets/material.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-          <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/read_data.js"></script>
     </body>
 </html>

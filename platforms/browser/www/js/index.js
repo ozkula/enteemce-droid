@@ -1,4 +1,3 @@
-
 var app = {
     // Application Constructor
     initialize: function() {
@@ -7,8 +6,9 @@ var app = {
 
     onDeviceReady: function() {
         document.addEventListener("backbutton", onBackKeyDown, false);
-        document.getElementById("getPosition").addEventListener("click", getPosition);
-       window.open(encodeURI('http://k-rudy.github.io/phonegap-twitter-timeline/?833719767106191360'), '_blank', 'location=no');
+        getPosition();
+        
+       // window.open(encodeURI('http://k-rudy.github.io/phonegap-twitter-timeline/?833719767106191360'), '_blank', 'location=no');
 
     }
 
@@ -95,11 +95,10 @@ function getPosition() {
    var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
    function onSuccess(position) {
-    var showWhere = document.getElementById('locationSet');
+    
         var showInput = document.getElementById('locationSetInput');
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
-        showWhere.innerHTML = position.coords.latitude  + ',' + position.coords.longitude;
         showInput.value = position.coords.latitude  + ',' + position.coords.longitude;
         
    }
