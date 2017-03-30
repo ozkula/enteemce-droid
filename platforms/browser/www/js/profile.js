@@ -1,9 +1,10 @@
  $(document).ready(function()
  {
- 	
+ 	$("#profile_name").append('<h2 class="mdl-card__title-text" id="profile_name">Hi, '+ localStorage.getItem("nama") +'</h2>');
+
  	$.ajax({
 	 type: "GET",
-	 url: "http://202.67.14.247/ntmc_mobile/globalpost.php",
+	 url: "http://202.67.14.247/ntmc_mobile/display.php?profile="+localStorage.getItem("id_user_mobile"),
 	 crossDomain: true,
 	 cache: false,
 	 beforeSend: function( xhr ) {

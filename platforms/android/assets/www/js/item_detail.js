@@ -1,32 +1,15 @@
-var app = {
-    // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
-
-    onDeviceReady: function() {
-        document.addEventListener("backbutton", onBackKeyDown, false);
-        getPosition();
-        google.maps.event.addDomListener(window, 'load', initialize);
-       // window.open(encodeURI('http://k-rudy.github.io/phonegap-twitter-timeline/?833719767106191360'), '_blank', 'location=no');
-
-    }
-
-};
- $(document).ready(function() {
-
-
+$(document).ready(function() {
  	var id=decodeURI(getUrlVars()["idworkordermobile"]);
 	var work_order_id=decodeURI(getUrlVars()["work_order_id"]);
 	var pengaduan=decodeURI(getUrlVars()["pengaduan"]);
 	var kategori=decodeURI(getUrlVars()["kategori"]);
 	var lat=decodeURI(getUrlVars()["lat"]);
-	var lng=decodeURI(getUrlVars()["long"]);
+	var lang=decodeURI(getUrlVars()["long"]);
 	var image=decodeURI(getUrlVars()["image"]);
 	var daterecieved=decodeURI(getUrlVars()["daterecieved"]);
 	var dateend=decodeURI(getUrlVars()["dateend"]);
 	var status=decodeURI(getUrlVars()["status"]);
-	var userid=decodeURI(getUrlVars()["user_mobile_id"]);
+	var userid=decodeURI(getUrlVars()["userid"]);
 	var city=decodeURI(getUrlVars()["city"]);
 	
 
@@ -48,7 +31,18 @@ var app = {
 		var iconKat = '<img src="img/lain.png" width="32px" height="auto"><br>Lain - Lain';
 	} 
 	var daterecievedspace = daterecieved.split(" ");
+	var drpermonth = daterecievedspace[0].split("-");
+	var drday = drpermonth[2];
+	var dryear = drpermonth[0];
+	if(1==drpermonth[1])var drmonth="Januari";else if(2==drpermonth[1])var drmonth="Februari";else if(3==drpermonth[1])var drmonth="Maret";else if(4==drpermonth[1])var drmonth="April";else if(5==drpermonth[1])var drmonth="Mei";else if(6==drpermonth[1])var drmonth="Juni";else if(7==drpermonth[1])var drmonth="Juli";else if(8==drpermonth[1])var drmonth="Agustus";else if(9==drpermonth[1])var drmonth="September";else if(10==drpermonth[1])var drmonth="Oktober";else if(11==drpermonth[1])var drmonth="November";else if(12==drpermonth[1])var drmonth="Desember";
+
 	var dateendspace = dateend.split(" ");
+	var depermonth = dateendspace[0].split("-");
+	var deday = depermonth[2];
+	var deyear = depermonth[0];
+	if(1==depermonth[1])var demonth="Januari";else if(2==depermonth[1])var demonth="Februari";else if(3==depermonth[1])var demonth="Maret";else if(4==depermonth[1])var demonth="April";else if(5==depermonth[1])var demonth="Mei";else if(6==depermonth[1])var demonth="Juni";else if(7==depermonth[1])var demonth="Juli";else if(8==depermonth[1])var demonth="Agustus";else if(9==depermonth[1])var demonth="September";else if(10==depermonth[1])var demonth="Oktober";else if(11==depermonth[1])var demonth="November";else if(12==depermonth[1])var demonth="Desember";else if(00==depermonth[1])var demonth="0000";
+
+
 	if ($.trim(image).length>0) {
 		document.getElementById("imageHere").innerHTML = '<img src="img/content/'+image+'" width="100%" height="auto">';	
 	} else
@@ -58,49 +52,33 @@ var app = {
     var citysplit = city.split(",");
     var getCity = citysplit[2];
     var getProvince = citysplit[3];
-    var latlng = lat+','+lng;
-
+    
     document.getElementById("pengaduan").append(pengaduan);
     document.getElementById("iconKat").innerHTML = iconKat;
-    document.getElementById("daterecieved").innerHTML = daterecievedspace[0]+'<br>'+daterecievedspace[1];
-    document.getElementById("dateend").innerHTML = 'Waktu Selesai <br>'+dateendspace[0]+'<br>'+dateendspace[1];
-    document.getElementById("location").innerHTML = city;
-    
-    // Maps
-    function initialize() {
-  var myLatlng = new google.maps.LatLng(latlng);
-  var mapOptions = {
-    zoom: 4,
-    center: myLatlng
-  };
+    document.getElementById("daterecieved").innerHTML = drday+"-"+drmonth+"-"+dryear+ '<br>'+daterecievedspace[1];
+    document.getElementById("dateend").innerHTML = 'Waktu Selesai <br>'+deday+"-"+demonth+"-"+deyear+ '<br>'+dateendspace[1];
+    document.getElementById("user").innerHTML = 'Pelapor <br><i>'+userid+'</i>';
+            
+            // Map
+            navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000 });
+        function onSuccess(position) {
+        
+        //Google Maps
+        var myLatlng = new google.maps.LatLng(lat,lang);
+        var mapOptions = {zoom: 17,center: myLatlng}
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        var marker = new google.maps.Marker({position: myLatlng,map: map});
+        }
+        function onError(error) {
+        alert('code: ' + error.code + '\n' +
+        'message: ' + error.message + '\n');
+        }
+        google.maps.event.addDomListener(window, 'load', onSuccess);
 
-  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        
 
-  var contentString = '<div id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-      '<h1 id="firstHeading" class="firstHeading">text</h1>'+
-      '<div id="bodyContent">'+
-      '<p><b>Some text</b>, text' +
-
-      '.</p>'+
-      '</div>'+
-      '</div>';
-
-  var infowindow = new google.maps.InfoWindow({
-      content: contentString
-  });
-
-  var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'text'
-  });
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
-  });
-}
-
- 
-     
+            // 
  });
+
+        
+        
