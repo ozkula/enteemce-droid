@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'self' 'unsafe-inline' 'unsafe-eval'; script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <link rel="stylesheet" href="assets/material.min.css">
+        <link rel="stylesheet" href="css/framework7-icons.css">
+        <link rel="stylesheet" href="css/custom.css">
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+
+        <title>NTMC</title>
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row text-center">
+              <span class="mdl-layout-title">NTMC</span>
+            </div>    
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+              <a href="main.html" class="mdl-layout__tab"><i class="f7-icons">social_twitter_fill</i></a>
+              <a href="report.html" onclick="return getPosition();" class="mdl-layout__tab is-active"><i class="f7-icons">chat_fill</i></a>
+              <a href="profile.html" class="mdl-layout__tab"><i class="f7-icons">persons</i></a>
+            </div>
+            <!-- <div class="mdl-layout__tab-bar mdl-js-ripple-effect"  style="height: 40px;">
+                <a class="mdl-layout__tab" onclick="return captureImage();"><i class="f7-icons">videocam</i></a>
+              </div> -->
+        </header>
+
+          <main class="mdl-layout__content">
+                <!-- Colored FAB button -->
+                <div class="mdl-grid">
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                                      <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" onclick="return captureImage();">
+                  <i class="f7-icons">videocam</i>
+                  <div id="dataview"></div>
+                </button>
+
+                    </div>
+                    <div class="mdl-layout-spacer"></div>
+                </div>
+
+
+          </main>
+
+    <footer>
+            
+            
+    </footer>
+        </div>
+        <script type="text/javascript" src="assets/material.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+// Called when capture operation is finished
+//
+function captureSuccess(mediaFiles) {    
+  uploadFile(mediaFiles[0]);
+}
+
+// Called if something bad happens.
+//
+function captureError(error) {
+    var msg = 'An error occurred during capture: ' + error.code;
+    navigator.notification.alert(msg, null, 'Uh oh!');
+}
+
+// A button will call this function
+//
+function captureImage() {
+    // Launch device camera application,
+    // allowing user to capture only one image by {limit: 1}
+    navigator.device.capture.captureImage(captureSuccess, captureError, { limit: 1 });
+}
+
+// Upload files to server
+function uploadFile(mediaFile) {
+
+    $("#dataview").append('<div id="progressprofile" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>');
+
+    path = mediaFile.fullPath;
+    name = mediaFile.name;
+
+    var options = new FileUploadOptions();
+    options.fileKey="file";
+    options.fileName=mediaFile.name;
+    options.mimeType="image/jpeg";
+
+    var params = new Object();
+    params.fullpath = path;
+    params.name = name;
+    params.work_order_id = localStorage.getItem("work_order_id");
+
+    options.params = params;
+    options.chunkedMode = false;
+    
+    var ft = new FileTransfer();
+    ft.upload( path, "http://202.67.14.247/ntmc_mobile/upload.php",
+        function(result) {
+          alert("upload Success");
+          window.location.href = "profile.html";
+        },
+        function(error) {
+            alert("error Upload");
+            window.location.href = "profile.html";
+        },
+        options
+        );
+}
+
+ </script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+    </body>
+</html>

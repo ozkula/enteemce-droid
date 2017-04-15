@@ -51,7 +51,7 @@
 			 }
 			 	
 			 if ($.trim(image).length>0) {
-			 	$("#dataview").append("<div class='mdl-cell mdl-cell--2-col-phone'><a href='item_detail.html?id="+id+"&work_order_id="+work_order_id+"&pengaduan="+pengaduan+"&kategori="+kategori+"&latlong="+lat+","+long+"&image="+image+"&daterecieved="+daterecieved+"&dateend="+dateend+"'> <div class='demo-card-event mdl-card mdl-shadow--2dp'> <div class='mdl-card__title mdl-card--expand'> <img src='img/lain.png' width='100%' height='auto'> </div><div class='mdl-card__actions' style='background: white;'> " + iconKat + " <span class='mdl-chip'> <span class='mdl-chip__text'>Telah Direspon</span> </span> </div></div></a></div>");
+			 	$("#dataview").append("<div class='mdl-cell mdl-cell--2-col-phone'><a href='item_detail.html?id="+id+"&work_order_id="+work_order_id+"&pengaduan="+pengaduan+"&kategori="+kategori+"&latlong="+lat+","+long+"&image="+image+"&daterecieved="+daterecieved+"&dateend="+dateend+"'> <div class='demo-card-event mdl-card mdl-shadow--2dp'> <div class='mdl-card__title mdl-card--expand'> <img src='img/"+image+"' width='100%' height='auto'> </div><div class='mdl-card__actions' style='background: white;'> " + iconKat + " <span class='mdl-chip'> <span class='mdl-chip__text'>Telah Direspon</span> </span> </div></div></a></div>");
 			 }
 		 
 		 });

@@ -26,14 +26,21 @@
 			 		cache: false,
 			 		beforeSend: function(){ 
 			 			$("#insert").val('Connecting...');
-			 			
 			 		},
 			 		success: function(data){
-			 			if(data=="success")
+			 			var splitData = data.split(" ");
+			 			if(splitData[0]=="success")
 			 			{
-							window.location.href = "profile.html";
+			 				localStorage.setItem("work_order_id",splitData[1]);
+			 				var r = confirm("Upload a Picture ?");
+						    if (r == true) {
+						        window.location.href = "camera_report.html";
+						    } else {
+						        window.location.href = "profile.html";
+						    }
+							
 			 			}
-			 			else if(data=="error")
+			 			else if(splitData[0]=="error")
 			 			{
 			 				alert("error");
 			 			}
